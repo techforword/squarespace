@@ -7,7 +7,7 @@ const port = process.env.PORT || 8000;
 const cors = require('cors');
 
 var corsOptions = {
-  origin: 'http://127.0.0.1:5500/index.html',
+  origin: 'http://127.0.0.1:5500',
   optionsSuccessStatus: 200,
 };
 
