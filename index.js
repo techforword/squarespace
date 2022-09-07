@@ -1,7 +1,7 @@
 import express from 'express';
 import fetch from 'node-fetch';
 
-const API_KEY = 'cXycM0ts1IRN7293bbH1M8F0NbhYRBsx';
+// const API_KEY = 'cXycM0ts1IRN7293bbH1M8F0NbhYRBsx';
 const app = express();
 const port = process.env.PORT || 8000;
 const cors = require('cors');
@@ -16,7 +16,7 @@ app.get('/api/v1/courses', cors(corsOptions), async (req, res) => {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      apiKey: API_KEY,
+      apiKey: process.env.API_KEY,
     },
   };
 
@@ -29,30 +29,34 @@ app.get('/api/v1/courses', cors(corsOptions), async (req, res) => {
   return res.json(courses);
 });
 
-app.get('/api/v1/courses/1335944/enrollments', cors(corsOptions), async (req, res) => {
-  const options = {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      apiKey: API_KEY,
-    },
-  };
+app.get(
+  '/api/v1/courses/1335944/enrollments',
+  cors(corsOptions),
+  async (req, res) => {
+    const options = {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        apiKey: process.env.API_KEY,
+      },
+    };
 
-  const response = await fetch(
-    'https://developers.teachable.com/v1/courses/1335944/enrollments',
-    options
-  );
-  const enrollments = await response.json();
+    const response = await fetch(
+      'https://developers.teachable.com/v1/courses/1335944/enrollments',
+      options
+    );
+    const enrollments = await response.json();
 
-  return res.json(enrollments);
-});
+    return res.json(enrollments);
+  }
+);
 
 app.get('/api/v1/courses/1335944', cors(corsOptions), async (req, res) => {
   const options = {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      apiKey: API_KEY,
+      apiKey: process.env.API_KEY,
     },
   };
 
@@ -70,7 +74,7 @@ app.get('/api/v1/users', cors(corsOptions), async (req, res) => {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      apiKey: API_KEY,
+      apiKey: process.env.API_KEY,
     },
   };
 
