@@ -4,6 +4,10 @@ import fetch from 'node-fetch';
 const app = express();
 const port = process.env.PORT || 8000;
 
+const cors = require('cors');
+app.use(cors({ origin: '*' }));
+
+
 app.get('/api/v1/courses', async (req, res) => {
   const options = {
     method: 'GET',
