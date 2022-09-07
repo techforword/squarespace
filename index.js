@@ -3,12 +3,12 @@ import fetch from 'node-fetch';
 
 const app = express();
 const port = process.env.PORT || 8000;
-const cors = require('cors');
+// const cors = require('cors');
 
-var corsOptions = {
-  origin: '*',
-  optionsSuccessStatus: 200,
-};
+// var corsOptions = {
+//   origin: '*',
+//   optionsSuccessStatus: 200,
+// };
 
 app.get('/api/v1/courses', cors(corsOptions), async (req, res) => {
   const options = {
