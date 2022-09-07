@@ -5,8 +5,7 @@ import cors from 'cors';
 const app = express();
 const port = process.env.PORT || 8000;
 
-// https://tfw.squarespace.com
-app.use(cors({ origin: 'http://127.0.0.1:5500' }));
+app.use(cors({ origin: 'https://tfw.squarespace.com' }));
 
 app.get('/api/v1/courses', async (req, res) => {
   const options = {
