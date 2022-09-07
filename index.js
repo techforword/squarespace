@@ -1,19 +1,16 @@
 import express from 'express';
 import fetch from 'node-fetch';
+import cors from 'cors';
 
 const app = express();
 const port = process.env.PORT || 8000;
 
-const cors = require('cors');
 app.use(cors({ origin: '*' }));
 
 app.get('/api/v1/courses', async (req, res) => {
   const options = {
     method: 'GET',
     headers: {
-      '/**': {
-        'Access-Control-Allow-Origin': '*',
-      },
       Accept: 'application/json',
       apiKey: process.env.API_KEY,
     },
@@ -32,9 +29,6 @@ app.get('/api/v1/courses/1335944/enrollments', async (req, res) => {
   const options = {
     method: 'GET',
     headers: {
-      '/**': {
-        'Access-Control-Allow-Origin': '*',
-      },
       Accept: 'application/json',
       apiKey: process.env.API_KEY,
     },
@@ -53,9 +47,6 @@ app.get('/api/v1/courses/1335944', async (req, res) => {
   const options = {
     method: 'GET',
     headers: {
-      '/**': {
-        'Access-Control-Allow-Origin': '*',
-      },
       Accept: 'application/json',
       apiKey: process.env.API_KEY,
     },
@@ -74,9 +65,6 @@ app.get('/api/v1/users', async (req, res) => {
   const options = {
     method: 'GET',
     headers: {
-      '/**': {
-        'Access-Control-Allow-Origin': '*',
-      },
       Accept: 'application/json',
       apiKey: process.env.API_KEY,
     },
