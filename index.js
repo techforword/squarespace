@@ -3,16 +3,8 @@ import fetch from 'node-fetch';
 
 const app = express();
 const port = process.env.PORT || 8000;
-const cors = require('cors');
 
-const corsOptions = {
-  origin: '*',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-};
-
-app.get('/api/v1/courses', cors(corsOptions), async (req, res) => {
+app.get('/api/v1/courses', async (req, res) => {
   const options = {
     method: 'GET',
     headers: {
@@ -30,7 +22,7 @@ app.get('/api/v1/courses', cors(corsOptions), async (req, res) => {
   return res.json(courses);
 });
 
-app.get('/api/v1/courses/1335944/enrollments', cors(corsOptions), async (req, res) => {
+app.get('/api/v1/courses/1335944/enrollments', async (req, res) => {
   const options = {
     method: 'GET',
     headers: {
@@ -48,7 +40,7 @@ app.get('/api/v1/courses/1335944/enrollments', cors(corsOptions), async (req, re
   return res.json(enrollments);
 });
 
-app.get('/api/v1/courses/1335944', cors(corsOptions), async (req, res) => {
+app.get('/api/v1/courses/1335944', async (req, res) => {
   const options = {
     method: 'GET',
     headers: {
@@ -66,7 +58,7 @@ app.get('/api/v1/courses/1335944', cors(corsOptions), async (req, res) => {
   return res.json(webinars);
 });
 
-app.get('/api/v1/users', cors(corsOptions), async (req, res) => {
+app.get('/api/v1/users', async (req, res) => {
   const options = {
     method: 'GET',
     headers: {
