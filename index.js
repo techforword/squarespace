@@ -1,7 +1,6 @@
 import express from 'express';
 import fetch from 'node-fetch';
 
-// const API_KEY = 'cXycM0ts1IRN7293bbH1M8F0NbhYRBsx';
 const app = express();
 const port = process.env.PORT || 8000;
 const cors = require('cors');
