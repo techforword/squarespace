@@ -1,7 +1,7 @@
 import express from 'express';
 import fetch from 'node-fetch';
 
-const API_KEY = 'cXycM0ts1IRN7293bbH1M8F0NbhYRBsx';
+// const API_KEY = 'cXycM0ts1IRN7293bbH1M8F0NbhYRBsx';
 const app = express();
 const port = process.env.PORT || 8000;
 // const cors = require('cors');
@@ -16,7 +16,7 @@ app.get('/api/v1/courses', async (req, res) => {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      apiKey: API_KEY,
+      apiKey: process.env.API_KEY,
     },
   };
 
@@ -34,7 +34,7 @@ app.get('/api/v1/courses/1335944/enrollments', async (req, res) => {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      apiKey: API_KEY,
+      apiKey: process.env.API_KEY,
     },
   };
 
@@ -52,7 +52,7 @@ app.get('/api/v1/courses/1335944', async (req, res) => {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      apiKey: API_KEY,
+      apiKey: process.env.API_KEY,
     },
   };
 
@@ -70,7 +70,7 @@ app.get('/api/v1/users', async (req, res) => {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      apiKey: API_KEY,
+      apiKey: process.env.API_KEY,
     },
   };
 
