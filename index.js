@@ -11,7 +11,7 @@ const port = process.env.PORT || 8000;
 //   optionsSuccessStatus: 200,
 // };
 
-app.get('/api/v1/courses', cors(corsOptions), async (req, res) => {
+app.get('/api/v1/courses', async (req, res) => {
   const options = {
     method: 'GET',
     headers: {
@@ -29,29 +29,25 @@ app.get('/api/v1/courses', cors(corsOptions), async (req, res) => {
   return res.json(courses);
 });
 
-app.get(
-  '/api/v1/courses/1335944/enrollments',
-  cors(corsOptions),
-  async (req, res) => {
-    const options = {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        apiKey: API_KEY,
-      },
-    };
+app.get('/api/v1/courses/1335944/enrollments', async (req, res) => {
+  const options = {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      apiKey: API_KEY,
+    },
+  };
 
-    const response = await fetch(
-      'https://developers.teachable.com/v1/courses/1335944/enrollments',
-      options
-    );
-    const enrollments = await response.json();
+  const response = await fetch(
+    'https://developers.teachable.com/v1/courses/1335944/enrollments',
+    options
+  );
+  const enrollments = await response.json();
 
-    return res.json(enrollments);
-  }
-);
+  return res.json(enrollments);
+});
 
-app.get('/api/v1/courses/1335944', cors(corsOptions), async (req, res) => {
+app.get('/api/v1/courses/1335944', async (req, res) => {
   const options = {
     method: 'GET',
     headers: {
@@ -69,7 +65,7 @@ app.get('/api/v1/courses/1335944', cors(corsOptions), async (req, res) => {
   return res.json(webinars);
 });
 
-app.get('/api/v1/users', cors(corsOptions), async (req, res) => {
+app.get('/api/v1/users', async (req, res) => {
   const options = {
     method: 'GET',
     headers: {
