@@ -82,15 +82,3 @@ app.get('/api/v1/users', async (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-
-const http = require('http');
-
-http.createServer((req, res) => {
-  if (req.url === '/countUp.min.js') {
-    res.writeHead(200, { 'Content-type': 'text/javascript' });
-    res.end(js);
-  } else {
-    res.writeHead(404, { 'Content-type': 'text/plain' });
-    res.end('Not defined');
-  }
-});
