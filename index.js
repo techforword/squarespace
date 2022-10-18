@@ -5,7 +5,7 @@ import cors from "cors";
 const app = express();
 const port = process.env.PORT || 8000;
 
-app.use(cors({ origin: "https://www.techforword.com/" }));
+app.use(cors({ origin: "https://www.techforword.com" }));
 
 app.get("/api/v1/courses", async (req, res) => {
   const options = {
